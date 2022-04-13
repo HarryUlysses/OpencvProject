@@ -5,8 +5,6 @@ int main(int argc, char *argv[])
 	finder.setMinVote(1);
 	finder.setLineLengthAndGap(7, 1);
 	
-
-	// ÇãÐ±½ÃÕý
 	const char* filename = argv[1];
 	char outfile[256] = { 0 };
 	strcat(outfile, filename);
@@ -28,7 +26,6 @@ int main(int argc, char *argv[])
 	Mat result;
 	cvtColor(image, result, CV_BGRA2GRAY);
 	Mat contours;
-	//±ßÔµ¼ì²â
 	Canny(result, contours, 20, 200,3);
 
 	finder.findLines(contours);
